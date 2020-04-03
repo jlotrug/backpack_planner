@@ -2,3 +2,10 @@
 <%=display_dates(@trip)%>
 
 <%=render 'edit_time'%><br>
+
+
+<h2> Destinations!</h2>
+
+<%trip_destinations(@trip).each do |dest|%>
+<%=dest%>
+<%end%>
