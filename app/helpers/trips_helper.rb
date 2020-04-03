@@ -8,6 +8,6 @@ module TripsHelper
 
 
 def trip_destinations(trip)
-  trip.destinations ? trips.destinations : []
+  trip.destinations ? trip.destinations : []
 end
 end
