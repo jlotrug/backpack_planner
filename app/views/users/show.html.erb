@@ -1,1 +1,16 @@
-<h1><%=@user.name%></h1>
+  <h1><%=current_user.user_name.titleize%></h1>
+
+
+
+  <%user_trips.each do |trip|%>
+  <li><%=link_to trip.name, trip_path(trip)%></li>
+  <%end%>
+
+
+<h2>Create a New Trip</h2>
+<%=form_for @trip do |f|%>
+<%=f.hidden_field :user_id, :value => current_user.id%>
+<%=f.label :name%>
+<%=f.text_field :name%>
+<%=f.submit "submit"%>
+<%end%>

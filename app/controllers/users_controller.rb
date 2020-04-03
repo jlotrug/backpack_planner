@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  skip_before_action :authentication_required, only: [:new, :create]
 
   def new
     #binding.pry
@@ -7,6 +8,8 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
+    @user.user_name = @user.user_name.downcase
+    #binding.pry
     if @user.save
     #binding.pry
       session[:user_id] = @user.id
@@ -20,6 +23,8 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    @trips = Trip.find_by(user_id: @user.id)
+    @trip = Trip.new
   end
 
   private
