@@ -1,0 +1,18 @@
+<h1>Add Hotel</h1>
+
+<%=form_for @hotel do |f|%>
+<%=f.hidden_field :destination_id%>
+<%=f.label :name%><br>
+<%=f.text_field :name%><br>
+<%=f.label :price%><br>
+<%=f.number_field :price%><br>
+<%=f.label :location%><br>
+<%=f.text_field :location%><br>
+<%=f.label :checkin%><br>
+<%=f.datetime_field :checkin%><br>
+<%=f.label :checkout%><br>
+<%=f.datetime_field :checkout%><br>
+<h4>Check if this has been paid
+<%=f.check_box :paid%></h4>
+<%=f.submit%>
+<%end%>

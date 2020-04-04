@@ -2,5 +2,5 @@
 <%=@destination.transport_to%><br>
 <%=@destination.transport_from%><br>
 
-<%=button_to "Add Hotel", new_hotel_path, :id=> "destination_button_top", :method => "get", :destination_id => @destination.id%><br>
+<%=button_to "Add Hotel", new_hotel_path, :id=> "destination_button_top", :method => "get", params:{:destination_id => @destination.id}%><br>
 <%=button_to "Add Experience", new_experience_path, :class => "additional_buttons", :method => "get", params:{:destination_id => @destination.id}%>
