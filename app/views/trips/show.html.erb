@@ -7,7 +7,7 @@
 <h2> Destinations!</h2>
 
 <%trip_destinations(@trip).each do |dest|%>
-<%=dest%>
+<li><%=link_to dest.name, destination_path(dest)%></li>
 <%end%>
 
 <%=link_to "Add New Destination", new_trip_destination_path(@trip)%>
