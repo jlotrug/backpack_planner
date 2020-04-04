@@ -2,8 +2,16 @@
 <%=@destination.transport_to%><br>
 <%=@destination.transport_from%><br>
 
+
+<strong>Where you will be staying</strong>
 <%destination_hotels(@destination).each do |hotel|%>
 <li><%=hotel.name%></li>
+<%end%><br>
+
+<strong>What you will be doing</strong>
+
+<%destination_experiences(@destination).each do |exp|%>
+<li><%=exp.name%></li>
 <%end%>
 
 <%=button_to "Add Hotel", new_hotel_path, :id=> "destination_button_top", :method => "get", params:{:destination_id => @destination.id}%><br>

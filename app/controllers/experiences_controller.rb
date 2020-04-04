@@ -9,7 +9,7 @@ class ExperiencesController < ApplicationController
     @experience = Experience.new(experience_params)
     #binding.pry
     @experience.save
-    redirect_to experience_path(@experience)
+    redirect_to destination_path(@experience.destination)
 
   end
 
