@@ -8,8 +8,21 @@
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-
+  <%=create_nav%>
   <body>
+<%if session[:user_id]%>
+<header>
+
+
+<div class='nav-bar'>
+  <ul>
+    <li>Hello</li>
+    <li>Goodbye</li>
+  </ul>
+</div>
+</header>
+<%end%>
+
     <%= yield %>
   </body>
   <footer id="footer">

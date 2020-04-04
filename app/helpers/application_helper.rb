@@ -9,4 +9,10 @@ module ApplicationHelper
   def user_trips
     current_user.trips ? current_user.trips : []
   end
+
+  def create_nav
+    if session[:user_id]
+  
+    end
+  end
 end

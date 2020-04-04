@@ -69,3 +69,22 @@ li{
 
 
 }
+
+.nav-bar ul li{
+  color: white;
+  display: inline;
+  padding: 8px;
+  background-color: black;
+}
+
+.nav-bar ul{
+  list-style-type: none;
+  float: left;
+  float: top;
+  margin-bottom: 10px;
+}
+
+header{
+  padding-bottom: 30px;
+  margin-bottom: 10px;
+}
