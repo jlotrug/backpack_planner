@@ -1,0 +1,16 @@
+<h1>Add Experience</h1>
+
+<%=form_for @experience do |f|%>
+<%=f.hidden_field :destination_id%>
+<%=f.label :name%><br>
+<%=f.text_field :name%><br>
+<%=f.label :price%><br>
+<%=f.number_field :price%><br>
+<%=f.label :location%><br>
+<%=f.text_field :location%><br>
+<%=f.label :time%><br>
+<%=f.time_field :time%><br>
+<h4>Check if this has been paid
+<%=f.check_box :paid%></h4>
+<%=f.submit%>
+<%end%>

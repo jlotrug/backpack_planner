@@ -54,3 +54,18 @@ body {
 li{
   list-style: none;
 }
+
+.destination {
+  padding: 0;
+  color: red;
+  top: 100;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.destination-seperation{
+  margin-bottom: 100;
+  padding-bottom: 15px;
+
+
+}

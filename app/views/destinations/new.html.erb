@@ -1,0 +1,20 @@
+<h1>Add a New Destination</h1>
+
+<%=form_for [@trip, @destination] do |f|%>
+<div class="destination-seperation">
+  <strong class="destination-seperation">Name:</strong><h5 class="destination"> City or Province<br>
+  <%=f.text_field :name %><br style="line-height:100">
+</div>
+<div class="destination-seperation">
+  <strong>Transportation to:<h5 class= "destination">Include company, cost and any <br>
+    third party purchaser you used<br></h5></strong>
+    <%=f.text_area :transport_to%>
+</div>
+<div class="destination-seperation">
+  <strong>Transportation from:<h5 class= "destination">Include company, cost and any <br>
+    third party purchaser you used<br></h5></strong>
+    <%=f.text_area :transport_from%>
+</div>
+<%=f.submit%>
+
+<%end%>

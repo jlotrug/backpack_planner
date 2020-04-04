@@ -9,3 +9,5 @@
 <%trip_destinations(@trip).each do |dest|%>
 <%=dest%>
 <%end%>
+
+<%=link_to "Add New Destination", new_trip_destination_path(@trip)%>
