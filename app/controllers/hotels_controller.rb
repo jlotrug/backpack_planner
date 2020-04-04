@@ -7,8 +7,9 @@ class HotelsController < ApplicationController
 
   def create
     @hotel = Hotel.new(hotel_params)
-    binding.pry
-    redirect_to hotel_path(@hotel)
+    #binding.pry
+    @hotel.save
+    redirect_to destination_path(@hotel.destination)
   end
 
   def show

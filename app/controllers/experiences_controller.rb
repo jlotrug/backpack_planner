@@ -7,7 +7,8 @@ class ExperiencesController < ApplicationController
 
   def create
     @experience = Experience.new(experience_params)
-    binding.pry
+    #binding.pry
+    @experience.save
     redirect_to experience_path(@experience)
 
   end
