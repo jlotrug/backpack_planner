@@ -1,11 +1,11 @@
   <h1><%=current_user.user_name.titleize%></h1>
 
 
-
+<div id= "trips">
   <%user_trips.each do |trip|%>
   <li><%=link_to trip.name, trip_path(trip)%></li>
   <%end%>
-
+</div>
 
 <h2>Create a New Trip</h2>
 <%=form_for @trip do |f|%>

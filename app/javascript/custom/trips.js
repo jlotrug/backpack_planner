@@ -25,9 +25,17 @@ document.addEventListener("DOMContentLoaded", function(){
     }
 
     fetch('http://localhost:3000/trips', configObject).then(resp => {
-      resp.json()
+      return resp.json()
     }).then(json =>{
-      console.log(json)
+      appendTrip(json)
     })
   })
 })
+
+
+function appendTrip(trip){
+  let trips = document.querySelector('div#trips')
+  let li = document.createElement('li')
+  li.innerHTML = trip.name
+  trips.appendChild(li)
+}

@@ -6,11 +6,11 @@ class TripsController < ApplicationController
   end
 
   def create
-    binding.pry
+    #binding.pry
     @trip = Trip.new(trip_params)
 
     if @trip.save
-      binding.pry
+    #  binding.pry
       render json: @trip
     else
       render 'users/show'
