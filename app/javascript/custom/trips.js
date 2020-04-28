@@ -36,6 +36,9 @@ document.addEventListener("DOMContentLoaded", function(){
 function appendTrip(trip){
   let trips = document.querySelector('div#trips')
   let li = document.createElement('li')
-  li.innerHTML = trip.name
+  let a = document.createElement('a')
+  a.setAttribute('href', `http://localhost:3000/trips/${trip.id}`)
+  a.innerHTML = trip.name
+  li.appendChild(a)
   trips.appendChild(li)
 }
