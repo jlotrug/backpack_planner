@@ -1,15 +1,17 @@
 class TripsController < ApplicationController
+  skip_before_action :verify_authenticity_token
 
   def new
 
   end
 
   def create
-    #raise params.inspect
+    binding.pry
     @trip = Trip.new(trip_params)
 
     if @trip.save
-      redirect_to user_path(@trip.user)
+      binding.pry
+      render json: @trip
     else
       render 'users/show'
     end

@@ -12,12 +12,9 @@
   <body>
 <%if session[:user_id]%>
 <header>
-
-
 <div class='nav-bar'>
   <ul>
-    <li>Hello</li>
-    <li>Goodbye</li>
+    <li><%=link_to "Home", user_path(current_user), :class => "nav-bar-link"%></li>
   </ul>
 </div>
 </header>
