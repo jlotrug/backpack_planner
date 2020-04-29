@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", function(){
 
-
+  let token = document.querySelector('input[name = authenticity_token]').value
+  console.log(token)
   let submit = document.querySelector('form.new_trip')
 
   submit.addEventListener('submit', function(e){
@@ -16,6 +17,7 @@ document.addEventListener("DOMContentLoaded", function(){
         "Accept": 'application/json'
       },
       body:JSON.stringify({
+        authenticity_token: token,
         trip:{
 
         name: name.value,
@@ -23,6 +25,7 @@ document.addEventListener("DOMContentLoaded", function(){
         }
       })
     }
+
 
     fetch('http://localhost:3000/trips', configObject).then(resp => {
       return resp.json()

@@ -1,12 +1,12 @@
 class TripsController < ApplicationController
-  skip_before_action :verify_authenticity_token
+  #skip_before_action :verify_authenticity_token
 
   def new
 
   end
 
   def create
-    #binding.pry
+    #raise params.inspect
     @trip = Trip.new(trip_params)
 
     if @trip.save
