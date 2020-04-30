@@ -1,15 +1,13 @@
 document.addEventListener("DOMContentLoaded", function(){
 
   let token = document.querySelector('input[name = authenticity_token]').value
-  console.log(token)
   let submit = document.querySelector('form.new_trip')
+
 
   submit.addEventListener('submit', function(e){
     e.preventDefault();
     let name = document.querySelector('form.new_trip input#name')
     let user_id = document.querySelector('form.new_trip input#user_id')
-    console.log(user_id)
-
     let configObject = {
       method: "POST",
       headers:{
@@ -19,7 +17,7 @@ document.addEventListener("DOMContentLoaded", function(){
       body:JSON.stringify({
         authenticity_token: token,
         trip:{
-
+          authenticity_token: token,
         name: name.value,
         user_id: user_id.value
         }
@@ -30,7 +28,9 @@ document.addEventListener("DOMContentLoaded", function(){
     fetch('http://localhost:3000/trips', configObject).then(resp => {
       return resp.json()
     }).then(json =>{
+      console.log(json)
       appendTrip(json)
+      name.value =""
     })
   })
 })
