@@ -5,17 +5,17 @@ class TripsController < ApplicationController
 
   end
 
-  def create
+    #def create
     #raise params.inspect
-    @trip = Trip.new(trip_params)
+    #@trip = Trip.new(trip_params)
 
-    if @trip.save
+    #if @trip.save
     #  binding.pry
-      render json: @trip
-    else
-      render 'users/show'
-    end
-  end
+    #  render json: @trip
+    #else
+    #  render 'users/show'
+    #end
+  #end
 
   def edit
 
@@ -25,7 +25,7 @@ class TripsController < ApplicationController
     @trip = Trip.find(params[:id])
     @trip.update(trip_params)
     #binding.pry
-    redirect_to trip_path(@trip)
+    render json: {trip: display_dates_for_js(@trip).to_s}
   end
 
   def index
@@ -40,6 +40,10 @@ class TripsController < ApplicationController
 
   def trip_params
     params.require(:trip).permit(:name, :user_id, :start, :end)
+  end
+
+  def display_dates_for_js(trip)
+    trip.start.strftime('%B %d %Y') + " - " + trip.end.strftime('%B %d %Y')
   end
 
 end
