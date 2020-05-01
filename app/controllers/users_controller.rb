@@ -27,6 +27,7 @@ class UsersController < ApplicationController
   end
 
   def show
+    #binding.pry
     @user = User.find(params[:id])
     @trips = Trip.find_by(user_id: @user.id)
     @trip = Trip.new

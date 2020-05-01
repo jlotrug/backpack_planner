@@ -5,23 +5,22 @@ class TripsController < ApplicationController
 
   end
 
-    #def create
-    #raise params.inspect
-    #@trip = Trip.new(trip_params)
+    def create
+    @trip = Trip.new(trip_params)
 
-    #if @trip.save
-    #  binding.pry
-    #  render json: @trip
-    #else
-    #  render 'users/show'
-    #end
-  #end
+    if @trip.save
+      render json: @trip
+    else
+      render 'users/show'
+    end
+  end
 
   def edit
 
   end
 
   def update
+    #binding.pry
     @trip = Trip.find(params[:id])
     @trip.update(trip_params)
     #binding.pry

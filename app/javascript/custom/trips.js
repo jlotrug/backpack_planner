@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", function(){
+$(document).on('turbolinks:load', function(){
 
   let token = document.querySelector('input[name = authenticity_token]').value
   let submit = document.querySelector('form.new_trip')
@@ -38,7 +38,7 @@ document.addEventListener("DOMContentLoaded", function(){
 
 
 
-})
+
 
 
 
@@ -55,15 +55,18 @@ function appendTrip(trip){
 
 
 
-$(function(){
+
   let a = $('.edit_trip')
-  console.log(a)
+  //console.log(a)
   a.on('submit', function(e){
+    console.log("hello")
     e.preventDefault()
     $.post(this.action, $(this).serialize()).done(function(resp){
       console.log(resp)
       $('#dates').html(resp.trip)
       console.log(dates)
     })
-  })
 })
+})
+
+//$(document).ready(function(){
