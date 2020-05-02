@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :transport_froms
+  resources :transport_tos
   resources :experiences
   resources :hotels
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html

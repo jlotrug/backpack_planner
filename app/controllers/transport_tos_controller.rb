@@ -1,0 +1,2 @@
+class TransportTosController < ApplicationController
+end
