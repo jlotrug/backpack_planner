@@ -6,14 +6,14 @@
   <%=f.text_field :name %><br style="line-height:100">
 </div>
 <div class="destination-seperation">
-  <strong>Transportation to:<h5 class= "destination">Include company, cost and any <br>
-    third party purchaser you used<br></h5></strong>
-    <%=f.text_area :transport_to%>
+  <strong class="destination-seperation">Notes:</strong><h5 class="destination"> City or Province<br>
+  <%=f.text_area :notes %><br style="line-height:100">
 </div>
 <div class="destination-seperation">
-  <strong>Transportation from:<h5 class= "destination">Include company, cost and any <br>
-    third party purchaser you used<br></h5></strong>
-    <%=f.text_area :transport_from%>
+  <button type="button" name="button">Add Transportation To</button>
+</div>
+<div class="destination-seperation">
+  <button type="button" name="button">Add Transportation From</button>
 </div>
 <%=f.submit%>
 
