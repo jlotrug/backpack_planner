@@ -1,0 +1,21 @@
+<h1>Transport From</h1>
+
+<%=form_with model: @transport_from do%>
+  <%=label_tag :type%><br>
+  <%=text_field_tag :type%><br>
+  <%=label_tag :price%><br>
+  <%=number_field_tag :price%><br>
+  <%=label_tag :third_party%><br>
+  <%=text_field_tag :third_party%><br>
+  <%=label_tag :time_leaving%><br>
+  <%=time_field_tag :time_leaving%><br>
+  <%=label_tag :time_arriving%><br>
+  <%=time_field_tag :time_arriving%><br>
+  <%=label_tag "Where will you be leaving from?"%><br>
+  <%=text_area_tag :leaving_from_location%><br>
+  <%=label_tag "Where will you be arriving at?"%><br>
+  <%=text_area_tag :leaving_from_location%><br>
+  <%=label_tag "Has this been paid?"%>
+  <%=check_box_tag :paid%><br>
+  <%=submit_tag "submit"%>
+<%end%>

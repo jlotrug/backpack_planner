@@ -16,7 +16,7 @@
 
 <div class="destination-seperation">
   <%=button_to "Add Transportation To", new_transport_to_path, method: "get", params:{destination_id: @destination.id} %>
-  <%=button_to "Add Transportation From"%>
+  <%=button_to "Add Transportation From", new_transport_from_path,method: "get", params:{destination_id: @destination.id}%>
 </div>
 <div class="destination-seperation">
   <%=button_to "Add Hotel", new_hotel_path, :id=> "destination_button_top", :method => "get", params:{:destination_id => @destination.id}%>
