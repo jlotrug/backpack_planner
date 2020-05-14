@@ -1,10 +1,11 @@
 module TripsHelper
 
-  def display_dates(trip)
-    if trip.start == nil && trip.end == nil
+  def display_trip_dates(start, ending)
+    #binding.pry
+    if start == nil && ending == nil
       "(add dates)"
     else
-      "#{trip.start.strftime('%B %d %Y')} - #{trip.end.strftime('%B %d %Y')}"
+      "#{start.strftime('%B %d %Y')} - #{ending.strftime('%B %d %Y')}"
     end
   end
 

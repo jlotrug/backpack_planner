@@ -12,7 +12,8 @@ module ApplicationHelper
 
   def create_nav
     if session[:user_id]
-  
+
     end
   end
+
 end
