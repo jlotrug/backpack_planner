@@ -1,0 +1,34 @@
+
+#transport_to_display{
+  background-color: black;
+  color: white;
+  border-width: 5px;
+  border-color: red;
+  border-style: solid;
+  width: 25%;
+  height: 300px;
+  display: inline-block;
+  text-align: center;
+
+
+}
+
+#destination{
+  display: inline-block;
+  width: 25%;
+
+}
+
+#transport_from_display{
+  background-color: black;
+  color: white;
+  border-width: 5px;
+  border-color: red;
+  border-style: solid;
+  width: 25%;
+  height: 300px;
+  display: inline-block;
+  text-align: center;
+
+
+}

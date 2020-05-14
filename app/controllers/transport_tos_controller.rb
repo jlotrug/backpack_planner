@@ -1,13 +1,8 @@
 class TransportTosController < ApplicationController
 
   def new
-    @destination = Destination.find(params[:destination_id])
-    if @destination.transport_to
-      @transport_to =  @destination.transport_to
-    else
-      #binding.pry
+    #raise params.inspect
      @transport_to = Destination.find(params[:destination_id]).build_transport_to
-   end
   end
 
   def create
@@ -18,10 +13,10 @@ class TransportTosController < ApplicationController
   end
 
   def update
-    raise params.inspect
+    #raise params.inspect
     #binding.pry
-    @transport_to = TransportTo.create(transport_to_params)
-    #binding.pry
+    @transport_to = TransportTo.update(transport_to_params)
+    binding.pry
     redirect_to destination_path(@transport_to.destination)
   end
 

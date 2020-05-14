@@ -1,24 +1,32 @@
-<h1><%=@destination.name%></h1><br>
-<%=@destination.transport_to%><br>
-<%=@destination.transport_from%><br>
-
-
-<strong>Where you will be staying</strong>
-<%destination_hotels(@destination).each do |hotel|%>
-<li><%=link_to hotel.name, hotel_path(hotel), :class => 'black'%></li>
-<%end%><br>
-
-<strong>What you will be doing</strong>
-
-<%destination_experiences(@destination).each do |exp|%>
-<li><%=link_to exp.name, experience_path(exp), :class => 'black'%></li>
-<%end%>
-
-<div class="destination-seperation">
-  <%=button_to "Add Transportation To", new_transport_to_path, method: "get", params:{destination_id: @destination.id} %>
-  <%=button_to "Add Transportation From", new_transport_from_path,method: "get", params:{destination_id: @destination.id}%>
+<div id="transport_to_display">
+  <%=display_transport_to(@destination)%>
 </div>
-<div class="destination-seperation">
-  <%=button_to "Add Hotel", new_hotel_path, :id=> "destination_button_top", :method => "get", params:{:destination_id => @destination.id}%>
-  <%=button_to "Add Experience", new_experience_path, :class => "additional_buttons", :method => "get", params:{:destination_id => @destination.id}%>
+<div id="destination">
+  <h1><%=@destination.name%></h1><br>
+
+
+
+  <strong>Where you will be staying</strong>
+  <%destination_hotels(@destination).each do |hotel|%>
+  <li><%=link_to hotel.name, hotel_path(hotel), :class => 'black'%></li>
+  <%end%><br>
+
+  <strong>What you will be doing</strong>
+
+  <%destination_experiences(@destination).each do |exp|%>
+  <li><%=link_to exp.name, experience_path(exp), :class => 'black'%></li>
+  <%end%>
+
+  <div class="destination-seperation">
+    <%=button_to "Add Transportation To", new_transport_to_path, method: "get", params:{destination_id: @destination.id} %>
+    <%=button_to "Add Transportation From", new_transport_from_path,method: "get", params:{destination_id: @destination.id}%>
+  </div>
+  <div class="destination-seperation">
+    <%=button_to "Add Hotel", new_hotel_path, :id=> "destination_button_top", :method => "get", params:{:destination_id => @destination.id}%>
+    <%=button_to "Add Experience", new_experience_path, :class => "additional_buttons", :method => "get", params:{:destination_id => @destination.id}%>
+  </div>
+</div>
+
+<div id="transport_from_display">
+
 </div>
