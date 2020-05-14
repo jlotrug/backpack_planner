@@ -15,7 +15,6 @@ class DestinationsController < ApplicationController
 
   def show
     @destination = Destination.find(params[:id])
-    render layout: "destination"
   end
 
   private

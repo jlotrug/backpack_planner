@@ -1,8 +1,20 @@
-<div id="transport_to_display">
-  <%=display_transport_to(@destination)%>
-</div>
+
+  <div id="destination-heading">
+    <h1><%=@destination.name%></h1><br>
+  </div>
+
+  <div id="transport_to_display" <%= "style= border-style:none;" if !@destination.transport_to%>>
+    <%if display_transport_to(@destination)%>
+      <h1><%=@destination.transport_to.transport_type%></h1>
+      <p>$<%=@destination.transport_to.price%></p>
+      <p><%=@destination.transport_to.time_leaving%></p>
+      <p><%=@destination.transport_to.time_arriving%></p>
+      <p><%=@destination.transport_to.paid ? "Paid" : "Unpaid"%></p>
+    <%end%>
+  </div>
+
 <div id="destination">
-  <h1><%=@destination.name%></h1><br>
+
 
 
 
@@ -27,6 +39,6 @@
   </div>
 </div>
 
-<div id="transport_from_display">
+<div id="transport_from_display" <%= "style= border-style:none;" if !@destination.transport_to%>>
 
 </div>

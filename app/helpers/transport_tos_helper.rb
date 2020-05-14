@@ -1,8 +1,8 @@
 module TransportTosHelper
 
   def display_transport_to(destination)
-    if destination.transport_to
-      "Hello"
-    end
+      !!destination.transport_to
   end
+
+
 end
