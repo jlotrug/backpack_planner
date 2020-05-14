@@ -10,9 +10,9 @@ class TransportTosController < ApplicationController
   end
 
   def create
-    raise params.inspect
+    #raise params.inspect
     @transport_to = TransportTo.create(transport_to_params)
-    #binding.pry
+    binding.pry
     redirect_to destination_path(@transport_to.destination)
   end
 
@@ -30,6 +30,6 @@ class TransportTosController < ApplicationController
 private
 
   def transport_to_params
-    params.require(:transport_to).permit(:type, :price, :paid, :third_party, :time_leaving, :time_arriving, :leaving_from_location, :arriving_at_location)
+    params.require(:transport_to).permit(:transport_type, :price, :paid, :third_party, :time_leaving, :time_arriving, :leaving_from_location, :arriving_at_location)
   end
 end

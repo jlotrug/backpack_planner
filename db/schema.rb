@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_02_004358) do
+ActiveRecord::Schema.define(version: 2020_05_14_025351) do
 
   create_table "destinations", force: :cascade do |t|
     t.string "name"
@@ -46,7 +46,7 @@ ActiveRecord::Schema.define(version: 2020_05_02_004358) do
 
   create_table "transport_froms", force: :cascade do |t|
     t.integer "destination_id"
-    t.string "type"
+    t.string "transport_type"
     t.integer "price"
     t.boolean "paid"
     t.datetime "time_leaving"
@@ -60,7 +60,7 @@ ActiveRecord::Schema.define(version: 2020_05_02_004358) do
 
   create_table "transport_tos", force: :cascade do |t|
     t.integer "destination_id"
-    t.string "type"
+    t.string "transport_type"
     t.integer "price"
     t.boolean "paid"
     t.datetime "time_leaving"
