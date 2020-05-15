@@ -8,7 +8,7 @@ class TransportTosController < ApplicationController
   def create
     #raise params.inspect
     @transport_to = TransportTo.create(transport_to_params)
-    binding.pry
+  #  binding.pry
     redirect_to destination_path(@transport_to.destination)
   end
 

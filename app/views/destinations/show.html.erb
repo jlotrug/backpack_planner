@@ -3,6 +3,8 @@
     <h1><%=@destination.name%></h1><br>
   </div>
 
+<%if @destination.transport_to%>
+<%=link_to transport_to_path(@destination.transport_to) do %>
   <div id="transport_to_display" <%= "style= border-style:none;" if !@destination.transport_to%>>
     <%if display_transport_to(@destination)%>
       <h1><%=@destination.transport_to.transport_type%></h1>
@@ -12,7 +14,12 @@
       <p><%=@destination.transport_to.paid ? "Paid" : "Unpaid"%></p>
     <%end%>
   </div>
+  <%end%>
+  <%else%>
+  <div id="transport_to_display" <%= "style= border-style:none;" if !@destination.transport_to%>>
 
+    </div>
+<%end%>
 <div id="destination">
 
 
