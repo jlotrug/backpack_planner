@@ -15,13 +15,14 @@ class TransportTosController < ApplicationController
   def update
     #raise params.inspect
     #binding.pry
-    @transport_to = TransportTo.update(transport_to_params)
+    @transport_to = TransportTo.find(params[:id])
+    @transport_to.update(transport_to_params)
     #binding.pry
     redirect_to destination_path(@transport_to.destination)
   end
 
   def edit
-    binding.pry
+    #binding.pry
     @transport_to = TransportTo.find(params[:transport_to_id])
   end
 

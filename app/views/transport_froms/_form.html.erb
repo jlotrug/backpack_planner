@@ -1,0 +1,20 @@
+<%=form_with model: @transport_from, local: true do |f|%>
+  <%=f.hidden_field :destination_id, :value => @transport_from.destination_id%>
+  <%=label_tag :type%><br>
+  <%=f.text_field :transport_type%><br>
+  <%=label_tag :price%><br>
+  <%=f.number_field :price%><br>
+  <%=label_tag :third_party%><br>
+  <%=f.text_field :third_party%><br>
+  <%=label_tag :time_leaving%><br>
+  <%=f.time_field :time_leaving%><br>
+  <%=label_tag :time_arriving%><br>
+  <%=f.time_field :time_arriving%><br>
+  <%=label_tag "Where will you be leaving from?"%><br>
+  <%=f.text_area :leaving_from_location%><br>
+  <%=label_tag "Where will you be arriving at?"%><br>
+  <%=f.text_area :leaving_from_location%><br>
+  <%=label_tag "Has this been paid?"%>
+  <%=f.check_box :paid%><br>
+  <%=submit_tag "submit"%>
+<%end%>
