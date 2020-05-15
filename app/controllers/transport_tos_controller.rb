@@ -16,7 +16,7 @@ class TransportTosController < ApplicationController
     #raise params.inspect
     #binding.pry
     @transport_to = TransportTo.update(transport_to_params)
-    binding.pry
+    #binding.pry
     redirect_to destination_path(@transport_to.destination)
   end
 

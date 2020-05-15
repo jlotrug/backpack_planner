@@ -1,5 +1,4 @@
 <h1>Add Transportation Details</h1>
-
 <%=form_with model: @transport_to, local: true do |f|%>
   <%=f.hidden_field :destination_id, :value => @transport_to.destination_id%>
   <%=label_tag :type%><br>

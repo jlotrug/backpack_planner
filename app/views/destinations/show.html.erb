@@ -30,8 +30,8 @@
   <%end%>
 
   <div class="destination-seperation">
-    <%=button_to "Add Transportation To", new_transport_to_path, method: "get", params:{destination_id: @destination.id} %>
-    <%=button_to "Add Transportation From", new_transport_from_path,method: "get", params:{destination_id: @destination.id}%>
+    <%=transport_to_buttons(@destination) %>
+    <%=transport_from_buttons(@destination)%>
   </div>
   <div class="destination-seperation">
     <%=button_to "Add Hotel", new_hotel_path, :id=> "destination_button_top", :method => "get", params:{:destination_id => @destination.id}%>
@@ -41,10 +41,10 @@
 
 <div id="transport_from_display" <%= "style= border-style:none;" if !@destination.transport_from%>>
   <%if display_transport_from(@destination)%>
-    <h1><%=@destination.transport_to.transport_type%></h1>
-    <p>$<%=@destination.transport_to.price%></p>
-    <p>Leaving: <%=display_transport_to_dates(@destination.transport_from.time_leaving)%></p>
-    <p>Arriving: <%=display_transport_to_dates(@destination.transport_from.time_arriving)%></p>
-    <p><%=@destination.transport_to.paid ? "Paid" : "Unpaid"%></p>
+    <h1><%=@destination.transport_from.transport_type%></h1>
+    <p>$<%=@destination.transport_from.price%></p>
+    <p>Leaving: <%=display_transport_from_dates(@destination.transport_from.time_leaving)%></p>
+    <p>Arriving: <%=display_transport_from_dates(@destination.transport_from.time_arriving)%></p>
+    <p><%=@destination.transport_from.paid ? "Paid" : "Unpaid"%></p>
   <%end%>
 </div>
