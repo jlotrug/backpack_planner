@@ -8,7 +8,7 @@ class TransportTosController < ApplicationController
   def create
     #raise params.inspect
     @transport_to = TransportTo.create(transport_to_params)
-    #binding.pry
+    binding.pry
     redirect_to destination_path(@transport_to.destination)
   end
 
@@ -20,6 +20,10 @@ class TransportTosController < ApplicationController
     redirect_to destination_path(@transport_to.destination)
   end
 
+  def edit
+    binding.pry
+    @transport_to = TransportTo.find(params[:transport_to_id])
+  end
 
 
 

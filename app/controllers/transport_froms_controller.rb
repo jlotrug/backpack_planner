@@ -10,6 +10,10 @@ class TransportFromsController < ApplicationController
     redirect_to destination_path(@transport_from.destination)
   end
 
+  def edit
+    @transport_from = TransportFrom.find(params[:transport_from_id])
+  end
+
 
   def transport_from_params
     params.require(:transport_from).permit(:transport_type, :price, :paid, :third_party, :time_leaving, :time_arriving, :leaving_from_location, :arriving_at_location, :destination_id)

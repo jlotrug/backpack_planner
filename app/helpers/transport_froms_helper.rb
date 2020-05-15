@@ -15,9 +15,9 @@ module TransportFromsHelper
 
   def transport_from_buttons(destination)
     if destination.transport_from
-      button_to "Edit Transportation From", edit_transport_from_path, method: "PATCH", params:{id: @destination.transport_from.id }
+      button_to "Edit Transportation From", edit_transport_from_path, method: "get", params:{transport_from_id: @destination.transport_from.id }
     else
-      button_to "Add Transportation From", new_transport_from_path, method: "GET", params:{destination_id: @destination.id}
+      button_to "Add Transportation From", new_transport_from_path,method: "get", params:{destination_id: @destination.id}
     end
   end
 end
