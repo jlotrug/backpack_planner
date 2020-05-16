@@ -6,18 +6,15 @@
 <%if @destination.transport_to%>
 <%=link_to transport_to_path(@destination.transport_to) do %>
   <div id="transport_to_display" <%= "style= border-style:none;" if !@destination.transport_to%>>
-    <%if display_transport_to(@destination)%>
       <h1><%=@destination.transport_to.transport_type%></h1>
       <p>$<%=@destination.transport_to.price%></p>
       <p>Leaving: <%=display_transport_to_dates(@destination.transport_to.time_leaving)%></p>
       <p>Arriving: <%=display_transport_to_dates(@destination.transport_to.time_arriving)%></p>
       <p><%=@destination.transport_to.paid ? "Paid" : "Unpaid"%></p>
-    <%end%>
   </div>
   <%end%>
   <%else%>
   <div id="transport_to_display" <%= "style= border-style:none;" if !@destination.transport_to%>>
-
     </div>
 <%end%>
 <div id="destination">
@@ -46,12 +43,17 @@
   </div>
 </div>
 
-<div id="transport_from_display" <%= "style= border-style:none;" if !@destination.transport_from%>>
-  <%if display_transport_from(@destination)%>
-    <h1><%=@destination.transport_from.transport_type%></h1>
-    <p>$<%=@destination.transport_from.price%></p>
-    <p>Leaving: <%=display_transport_from_dates(@destination.transport_from.time_leaving)%></p>
-    <p>Arriving: <%=display_transport_from_dates(@destination.transport_from.time_arriving)%></p>
-    <p><%=@destination.transport_from.paid ? "Paid" : "Unpaid"%></p>
-  <%end%>
-</div>
+<%if display_transport_from(@destination)%>
+  <%=link_to transport_to_path(@destination.transport_to) do %>
+    <div id="transport_from_display" <%= "style= border-style:none;" if !@destination.transport_from%>>
+        <h1><%=@destination.transport_from.transport_type%></h1>
+        <p>$<%=@destination.transport_from.price%></p>
+        <p>Leaving: <%=display_transport_from_dates(@destination.transport_from.time_leaving)%></p>
+        <p>Arriving: <%=display_transport_from_dates(@destination.transport_from.time_arriving)%></p>
+        <p><%=@destination.transport_from.paid ? "Paid" : "Unpaid"%></p>
+    </div>
+  <%end%>  
+<%else%>
+  <div id="transport_from_display" <%= "style= border-style:none;" if !@destination.transport_from%>>
+  </div>
+<%end%>

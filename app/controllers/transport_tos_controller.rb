@@ -26,6 +26,10 @@ class TransportTosController < ApplicationController
     @transport_to = TransportTo.find(params[:transport_to_id])
   end
 
+  def show
+    @transport_to = TransportTo.find(params[:id])
+  end
+
 
 
 private

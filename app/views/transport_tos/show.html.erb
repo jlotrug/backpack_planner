@@ -1,0 +1,9 @@
+<h1><%=@transport_to.transport_type%></h1>
+<h3>to <%=@transport_to.destination.name%></h3>
+<%=@transport_to.price%>
+<li><%=display_transport_to_dates(@transport_to.time_leaving)%></li>
+<li><%=display_transport_to_dates(@transport_to.time_arriving)%></li>
+<li><a href="https://<%=@transport_to.third_party%>.com" target="_blank"><%=@transport_to.third_party%></a></li>
+<li><%=@transport_to.leaving_from_location%></li>
+<li><%=@transport_to.arriving_at_location%></li>
+<%=link_to "Edit Details", edit_transport_to_path(@transport_to, transport_to_id: @transport_to.id)%>

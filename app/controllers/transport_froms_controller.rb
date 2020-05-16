@@ -18,7 +18,11 @@ class TransportFromsController < ApplicationController
     @transport_from = TransportFrom.find(params[:id])
     @transport_from.update(transport_from_params)
     redirect_to destination_path(@transport_from.destination)
-  end 
+  end
+
+  def show
+    @transport_from = TransportFrom.find(params[:id])
+  end
 
 
   def transport_from_params
